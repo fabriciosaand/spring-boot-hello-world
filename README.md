@@ -44,7 +44,7 @@ Para executar o projeto localmente, siga estes passos:
 
 Para executar o projeto utilizando Docker, siga estes passos:
 
-1. Certifique-se de que a aplicação está parada. Digite `ctrl + c` no terminal para parar a aplicação.
+1. Certifique-se que a aplicação está parada.
 
 2. Execute o comando para gerar arquivo **.jar**
 
@@ -55,10 +55,40 @@ Para executar o projeto utilizando Docker, siga estes passos:
 3. Execute o contêiner utilizando o docker-compose
 
    ~~~shell
-   docker-compose up -d
+   docker compose up -d
    ~~~
 
    Após esses passos, o aplicativo estará disponível em <http://localhost:8082>, assim como na execução local.
+
+## Parando o Contêiner Docker
+
+Se você precisar parar o contêiner Docker que está executando o aplicativo Spring Boot, você pode usar o seguinte comando:
+
+~~~shell
+docker compose down
+~~~
+
+## Parando a Aplicação Localmente
+
+Quando a aplicação estiver sendo executada localmente através do Maven, você pode pará-la pressionando:
+
+- **Ctrl+C** no terminal se estiver rodando em modo interativo.
+
+Ou, se você iniciou a aplicação em segundo plano, você pode pará-la encontrando o ID do processo e utilizando o comando `kill`:
+
+1. Encontre o ID do processo com:
+
+   ~~~shell
+   ps -f | grep java
+   ~~~
+
+2. Pare a aplicação com:
+
+   ~~~shell
+   kill [PID]
+   ~~~
+
+   Substitua [PID] pelo número do ID do processo que você deseja parar.
 
 ## Contribuições
 
